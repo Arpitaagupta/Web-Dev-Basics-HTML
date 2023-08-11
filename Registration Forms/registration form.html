@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form action="FIRST.html" method="GET">
+            
+            <label> User id:</label>
+            <input type="text" name="id" class="inputstyle" id="register_id"/>
+            <br/>
+            
+            <label>Password:</label>
+            <td><input type="password" name="password" class="inputstyle" id="register_password"/>
+           <br/>
+        
+            <label>Name:</label>
+            <input type="text" name="name" class="inputstyle" id="register_name"/>
+            <br/>
+        
+            <label>Address:</label>
+            <textarea  name="Address" class="inputstyle"  rows="1" cols="50"></textarea>
+            <br/>
+
+            <label for="Country">Country:</label>
+            <select name ="Country" id="register_country">
+                <option value="AF">Afghanistan</option>
+                <option value="AU">Australia</option>
+                <option value="BA">Bangladesh</option>
+                <option value="BE">Belgium</option>
+                <option value="CA">Canada</option>
+                <option value="EG">Egypt</option>
+                <option value="HU">Hungary</option>
+                <option value="IN">India</option>
+                <option value="PK">Pakistan</option>
+                <option value="USA">United States Of America</option>
+                <option value="OT">Others</option>
+            </select>
+            <br/>
+
+            <label>ZIP Code:</label>
+            <input type="number" name="Code" class="inputstyle" id="register_Code"/>
+            <br/>
+
+            <label>Email:</label>
+            <input type="email" name="email" class="inputstyle" id="register_email"/>
+            <br/>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender"  id="register_gendermale" value="male"/>
+            <label for ="register_gendermale">Male</label>
+
+            <input type="radio" name="gender"  id="register_genderfemale" value="female"/>
+            <label for ="register_gendermale">Female</label>
+            <br/>
+
+            <label>Language:</label>
+            <input type="checkbox"  id="english" value="english"/>
+            <label for ="english">English</label>
+
+            <input type="checkbox"  id="nonenglish" value="nonenglish"/>
+            <label for ="nonenglish">Non English</label>
+            <br/>
+
+            <label>About:</label>
+            <textarea  name="About" class="inputstyle"  rows="5" cols="50"></textarea>
+            <br/>
+
+            <input type="submit" id="register_0" value="Submit">
+
+        </form>
+    </body>
+</html>

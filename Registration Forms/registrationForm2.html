@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            text-decoration: underline;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="reset"] {
+            background-color: red;
+            color: #fff;
+        }
+        input[type="button"] {
+            background-color: #156d1b;
+            color: #fff;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <form>
+        <label>Name:</label>
+        <input type="text" name="name">
+
+        <label>Email ID:</label>
+        <input type="email" name="eid">
+
+        <label>Password:</label>
+        <input type="password" name="pword">
+
+        <label>Gender:</label>
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female
+        <input type="radio" name="gender">Other
+
+        <label>Course:</label>
+        <select name="crs">
+            <option>B.Sc</option>
+            <option>B.Com</option>
+            <option>B.CA</option>
+            <option>B.Tech</option>
+            <option>M.Tech</option>
+        </select>
+
+        <label>Identification Marks:</label>
+        <textarea rows="3" cols="40" placeholder="Type Here..."></textarea>
+
+        <label>Student Photo:</label>
+        <input type="file" name="file">
+
+        <input type="checkbox">
+        <label>The above information is verified.</label>
+
+        <br>
+        <input type="submit">
+        <input type="reset">
+        <input type="button" value="View">
+    </form>
+</body>
+</html>

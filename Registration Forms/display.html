@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Details</title>
+    <style>
+        /* Your existing styles here */
+    </style>
+</head>
+<body>
+    <h1>Form Details</h1>
+    <p>Name: <span id="name"></span></p>
+    <p>Email ID: <span id="eid"></span></p>
+    <!-- Add more fields as needed -->
+
+    <script>
+        // Display form data from sessionStorage
+        document.getElementById('name').textContent = sessionStorage.getItem('name');
+        document.getElementById('eid').textContent = sessionStorage.getItem('eid');
+        // Add more lines to display other fields
+
+        // Clear sessionStorage after displaying
+        sessionStorage.clear();
+    </script>
+</body>
+</html>
