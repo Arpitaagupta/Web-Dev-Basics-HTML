@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Your JavaScript code here
+                // Function to find the second largest number in an array
+function findSecondLargest(arr) {
+    if (arr.length < 2) {
+      return "Array should have at least two numbers";
+    }
+  
+    let largest = arr[0];
+    let secondLargest = arr[0];
+  
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] > largest) {
+        secondLargest = largest;
+        largest = arr[i];
+      } else if (arr[i] > secondLargest && arr[i] !== largest) {
+        secondLargest = arr[i];
+      }
+    }
+  
+    return secondLargest;
+  }
+  
+  // Example array of numbers
+  const numbers = [5, 2, 9, 10, 7, 3];
+  
+  // Find the second largest number
+  const secondLargestNumber = findSecondLargest(numbers);
+  
+  // Check if a valid second largest number was found
+  if (typeof secondLargestNumber === 'number') {
+    // Sum the second and second largest numbers
+    const sum = secondLargestNumber + numbers[1];
+    console.log("Second Largest Number: " + secondLargestNumber);
+    console.log("Sum of Second and Second Largest Numbers: " + sum);
+  } else {
+    console.log(secondLargestNumber); // Error message
+  }
+  
+              });
+              
+        </script>
+    </body>
+</html>

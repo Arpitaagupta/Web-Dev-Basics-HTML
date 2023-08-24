@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="container">This is some text.</div>
+    
+    <!-- Button to change size -->
+    <button onclick="changeSizeByBtn('20px')">Change Font Size</button>
+
+    <!-- Slider to adjust size -->
+    <input type="range" id="slider" min="10" max="30" value="16" oninput="changeSizeBySlider()">
+
+    <script>
+      var cont = document.getElementById("container");
+
+      function changeSizeByBtn(size) {
+        // Set value of the parameter as fontSize
+        cont.style.fontSize = size;
+      }
+
+      function changeSizeBySlider() {
+        var slider = document.getElementById("slider");
+        // Set slider value as fontSize
+        cont.style.fontSize = slider.value + "px";
+      }
+    </script>
+  </body>
+</html>

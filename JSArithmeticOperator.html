@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      // Function to perform addition
+      function add(x, y) {
+        return x + y;
+      }
+
+      // Function to perform subtraction
+      function subtract(x, y) {
+        return x - y;
+      }
+
+      // Function to perform multiplication
+      function multiply(x, y) {
+        return x * y;
+      }
+
+      // Function to perform division
+      function divide(x, y) {
+        if (y === 0) {
+          return "Cannot divide by zero";
+        }
+        return x / y;
+      }
+
+      // Get the operation choice from the user
+      var operation = prompt("Enter an operation: + (addition), - (subtraction), * (multiplication), / (division)");
+
+      // Get the two numbers from the user and parse them as floats
+      var num1 = parseFloat(prompt("Enter the first number"));
+      var num2 = parseFloat(prompt("Enter the second number"));
+
+      var result;
+
+      // Perform the selected operation
+      switch (operation) {
+        case "+":
+          result = add(num1, num2);
+          break;
+        case "-":
+          result = subtract(num1, num2);
+          break;
+        case "*":
+          result = multiply(num1, num2);
+          break;
+        case "/":
+          result = divide(num1, num2);
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      // Display the result
+      alert("Result: " + result);
+    </script>
+  </body>
+</html>
