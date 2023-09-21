@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Data Validation to verify the Input</h2>
+        <p>
+            Age cannot be empty and must be 18 & above or 60 % below..
+        </p>
+        <input id = "age">
+        <button type="button" onclick="myAge()">Submit</button>
+
+        <p id = "testage"></p>
+
+        <script>
+            function myAge(){
+                var n, msg;
+
+                n = document.getElementById("age").value;
+
+                //To check that age is not a number less than 18 or greater than 60
+                if(isNaN(n) || n<18 || n>60) {
+                    msg = "Invalid Age - " + n +", it must be number 18-60";
+                    document.getElementById("testage").innerHTML=msg;
+                    //alert(msg);
+                }
+                else{
+                    msg = "Valid Age - " + n +", entered";
+                    document.getElementById("testage").innerHTML=msg;
+                }
+                alert(msg);
+            }
+        </script>
+    </body>
+</html>

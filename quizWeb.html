@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #007bff;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .options button:hover {
+            background-color: #f2f2f2;
+        }
+        .correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .wrong {
+            background-color: #FF5733;
+            color: white;
+        }
+        .quiz-end {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Adaptive Quiz</h2>
+        <div class="question" id="question">Question goes here</div>
+        <div class="options" id="options">
+            <!-- Options go here -->
+        </div>
+        <button onclick="nextQuestion()" id="nextButton">Next</button>
+        <div class="quiz-end" id="quizEnd" style="display: none;">Quiz Ended!</div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["London", "Berlin", "Paris", "Madrid"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Earth", "Mars", "Jupiter", "Venus"],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the largest mammal in the world?",
+                options: ["Elephant", "Giraffe", "Blue Whale", "Lion"],
+                correctAnswer: 2
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let quizEnded = false;
+
+        function loadQuestion() {
+            const questionElement = document.getElementById("question");
+            const optionsElement = document.getElementById("options");
+            const nextButton = document.getElementById("nextButton");
+            const quizEnd = document.getElementById("quizEnd");
+
+            if (currentQuestionIndex < questions.length) {
+                const currentQuestion = questions[currentQuestionIndex];
+
+                questionElement.textContent = currentQuestion.question;
+                optionsElement.innerHTML = "";
+
+                currentQuestion.options.forEach((option, index) => {
+                    const optionButton = document.createElement("button");
+                    optionButton.textContent = option;
+                    optionButton.onclick = () => checkAnswer(index);
+                    optionsElement.appendChild(optionButton);
+                });
+
+                nextButton.style.display = "none";
+                quizEnd.style.display = "none";
+            } else {
+                // Quiz has ended
+                questionElement.textContent = "";
+                optionsElement.innerHTML = "";
+                nextButton.style.display = "none";
+                quizEnd.style.display = "block";
+                quizEnded = true;
+            }
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (quizEnded) return;
+
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedButton = document.querySelectorAll(".options button")[selectedIndex];
+
+            if (selectedIndex === currentQuestion.correctAnswer) {
+                selectedButton.classList.add("correct");
+                score++;
+            } else {
+                selectedButton.classList.add("wrong");
+            }
+
+            currentQuestionIndex++;
+            document.getElementById("nextButton").style.display = "block";
+        }
+
+        function nextQuestion() {
+            if (quizEnded) return;
+
+            const optionButtons = document.querySelectorAll(".options button");
+            optionButtons.forEach(button => {
+                button.classList.remove("correct", "wrong");
+            });
+
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

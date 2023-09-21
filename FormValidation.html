@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>Form Level Validation - here checking only one field onsubmit level</h2>
+        <script>
+            function validateForm(){
+                var x = document.forms["myForm"]["name"].value;
+                if(x==""){
+                    alert("Name field cannot be Empty.")
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>The name field must be entered, if not entered an Alert will be displayed</p>
+        <form name="myForm" onsubmit="return validateForm()" method="post">
+            Name : <input type = "text" name = "name">
+            <input type = "submit" value="Submit">
+        </form>
+        
+    </body>
+</html>
